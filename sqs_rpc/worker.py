@@ -222,3 +222,24 @@ class RPCWorker:
         for queue_url, thread in self._threads.items():
             thread.join(timeout=5)
             logger.info(f"Stopped worker thread for queue {queue_url}")
+
+    def health_check(self) -> bool:
+        """Check the health status of all worker threads.
+
+        Returns:
+            bool: True if all threads are running, False otherwise
+        """
+        if not self._running:
+            logger.warning("Worker is not running")
+            return False
+
+        all_threads_healthy = True
+        for queue_url, thread in self._threads.items():
+            is_alive = thread.is_alive()
+            if not is_alive:
+                logger.error(f"Worker thread for queue {queue_url} is not running")
+                all_threads_healthy = False
+            else:
+                logger.info(f"Worker thread for queue {queue_url} is running")
+
+        return all_threads_healthy

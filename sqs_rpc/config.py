@@ -2,7 +2,7 @@
 import os
 
 # Default AWS Region (can be overridden)
-AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")
+AWS_REGION = os.environ.get("AWS_REGION", "ap-southeast-1")
 
 # Default SQS Queue URLs (MUST be configured by the application)
 # These are placeholders; the application using this module should set them.

@@ -1,0 +1,40 @@
+[project]
+name = "sqs-rpc"
+version = "0.0.1"
+description = "A Python library for Remote Procedure Call (RPC) communication using Amazon SQS"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    {name = "Minh Ngoc Nguyen", email = "minhngocnguyen.403@gmail.com"}
+]
+maintainers = [
+    {name = "Minh Ngoc Nguyen", email = "minhngocnguyen.403@gmail.com"}
+]
+license = {text = "MIT"}
+keywords = ["sqs", "rpc", "aws", "messaging", "remote-procedure-call"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Networking",
+]
+dependencies = [
+    "boto3==1.38.28",
+]
+[dependency-groups]
+dev = [
+    "pre-commit==3.6.0",
+    "ruff==0.11.5",
+]
+[project.urls]
+Homepage = "https://github.com/ngocnguyen43/python-sqs-rpc"
+Documentation = "https://github.com/ngocnguyen43/python-sqs-rpc.git#readme"
+Repository = "https://github.com/ngocnguyen43/python-sqs-rpc"
+"Bug Tracker" = "https://github.com/ngocnguyen43/python-sqs-rpc/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

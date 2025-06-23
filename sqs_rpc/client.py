@@ -114,7 +114,8 @@ class RPCClient:
             "CorrelationId": {"DataType": "String", "StringValue": correlation_id}
         }
 
-        if response_queue_url:
+        # Only set ReplyQueueUrl if we want a response
+        if wait_for_response and response_queue_url:
             message_attributes["ReplyQueueUrl"] = {
                 "DataType": "String",
                 "StringValue": response_queue_url,

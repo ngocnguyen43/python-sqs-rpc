@@ -1,6 +1,6 @@
 [project]
 name = "sqs-rpc"
-version = "0.0.1"
+version = "0.0.2"
 description = "A Python library for Remote Procedure Call (RPC) communication using Amazon SQS"
 readme = "README.md"
 requires-python = ">=3.12"
